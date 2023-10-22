@@ -1,8 +1,8 @@
 .affair {
     display: flex;
     align-items: center;
-    width: 185px;
-
+    max-width: 185px;
+    min-width: 185px;
     border: 1.5px solid var(--color);
     border-radius: 5px;
 }

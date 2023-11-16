@@ -1,2 +1,14 @@
 .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    gap: 108px;
+    width: 50%;
+}
+
+.container div {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    width: 180px !important;
 }

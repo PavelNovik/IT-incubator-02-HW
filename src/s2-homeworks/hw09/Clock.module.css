@@ -1,14 +1,29 @@
 .buttonsContainer {
+    margin-top: 37px;
+    display: flex;
+    gap: 21px;
 }
 
+.buttonsContainer button:disabled{
+color: #FFFFFF;
+}
 .clock {
 }
 
 .watch {
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .watch strong {
+    font-weight: 600;
 }
 
 .more {
+    margin-top: 8px;
+    color: rgba(0, 0, 0, 0.50);
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
 }

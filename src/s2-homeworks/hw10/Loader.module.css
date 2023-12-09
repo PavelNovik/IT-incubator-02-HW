@@ -1,3 +1,14 @@
 .loader {
+    display: flex;
+    width: 108px !important;
+    height: 108px;
+    flex-shrink: 0;
+    background: no-repeat url('./Loading.png');
     /*свг и/или анимация*/
+    animation: spin 1.5s linear infinite;
 }
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+   }

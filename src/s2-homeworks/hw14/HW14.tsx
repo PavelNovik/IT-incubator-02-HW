@@ -46,7 +46,7 @@ const HW14 = () => {
     const onChangeText = (value: string) => {
         setFind(value)
         // делает студент
-
+        console.log(searchParams)
         // добавить/заменить значение в квери урла
         // setSearchParams(
         setSearchParams(value)

@@ -5,6 +5,7 @@ import axios from 'axios'
 import SuperPagination from './common/c9-SuperPagination/SuperPagination'
 import {useSearchParams} from 'react-router-dom'
 import SuperSort from './common/c10-SuperSort/SuperSort'
+import {Loader} from "../hw10/Loader";
 
 /*
 * 1 - дописать SuperPagination
@@ -52,21 +53,27 @@ const HW15 = () => {
         getTechs(params)
             .then((res) => {
                 // делает студент
-
                 // сохранить пришедшие данные
-
+                if (res) {
+                    setTechs(res.data.techs)
+                    setTotalCount(res.data.totalCount)
+                }
                 //
             })
+            .finally(() => setLoading(false))
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
-
         // setPage(
+        setPage(newPage)
         // setCount(
+        setCount(newCount)
 
         // sendQuery(
+        sendQuery({page: newPage, count: newCount, sort})
         // setSearchParams(
+        setSearchParams(`page=${newPage}&count=${newCount}&sort=${sort}`)
 
         //
     }
@@ -75,11 +82,14 @@ const HW15 = () => {
         // делает студент
 
         // setSort(
+        setSort(newSort)
         // setPage(1) // при сортировке сбрасывать на 1 страницу
-
+        setPage(1)
         // sendQuery(
+        sendQuery({page, count, sort: newSort})
         // setSearchParams(
-
+        console.log(sort)
+        setSearchParams(`page=${page}&count=${count}&sort=${sort}`)
         //
     }
 
@@ -106,8 +116,8 @@ const HW15 = () => {
         <div id={'hw15'}>
             <div className={s2.hwTitle}>Homework #15</div>
 
-            <div className={s2.hw}>
-                {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
+            <div className={s2.hw} style={{position: "relative"}}>
+                {idLoading && <div id={'hw15-loading'} className={s.loading}><Loader/></div>}
 
                 <SuperPagination
                     page={page}
